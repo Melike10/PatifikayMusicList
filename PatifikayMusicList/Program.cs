@@ -35,7 +35,7 @@ Musician.Print(salesAlbumHigherThan10Milion);
 Console.WriteLine("---------------------------------------------------------");
 
 Console.WriteLine("--2000 yılı öncesi çıkış yapmış ve pop müzik yapan şarkıcılar---");
-var list2000Before = musicians.Where(m => m.Year<2000).OrderBy(m => m.Year).GroupBy(m => m.Year).ToList();
+var list2000Before = musicians.Where(m => m.Year<2000 && m.Type.Contains("Pop")).OrderBy(m => m.Year).GroupBy(m => m.Year).ToList();
 
 foreach (var item in list2000Before)
 {
